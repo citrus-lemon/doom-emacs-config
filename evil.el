@@ -2,6 +2,7 @@
 
 (when (featurep 'evil)
   (setq display-line-numbers-type 'relative)
+  (map! :map evil-motion-state-map "C-e" #'evil-scroll-up)
   (map! :map evil-insert-state-map
         "C-n" nil
         "C-p" nil)
