@@ -12,6 +12,11 @@
       (add-hook! 'typescript-mode-hook     #'typescript-eslint-ls-fn)
       (add-hook! 'typescript-tsx-mode-hook #'typescript-eslint-ls-fn))))
 
+(use-package! graphql-mode
+  :hook (graphql-mode . lsp-deferred)
+  :commands (lsp lsp-deferred)
+  :when (featurep! :lang web))
+
 (use-package! dash-at-point
   :config
   (map! :leader
