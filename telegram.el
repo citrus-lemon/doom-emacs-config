@@ -47,4 +47,5 @@
   :config
   (add-hook! 'telega-root-mode-hook #'hl-line-mode)
   (map! :map telega-msg-button-map
-        "k" nil))
+        "k" nil
+        "SPC" nil))
