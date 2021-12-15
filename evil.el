@@ -10,6 +10,8 @@
         :i "C-y" #'yank
         :i "C-d" #'delete-char
         :i "C-k" #'kill-line)
+  ;; mute recording macro
+  (map! :n "q" nil)
   (map! :leader
         :when (featurep! :ui workspaces)
         :prefix ("TAB" . "workspace")
