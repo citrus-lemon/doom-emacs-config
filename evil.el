@@ -7,7 +7,8 @@
   ;; make insert mode same with emacs
   (map! :i "C-n" nil
         :i "C-p" nil
-        :i "C-y" #'yank)
+        :i "C-y" #'yank
+        :i "C-d" #'delete-char)
   (map! :leader
         :when (featurep! :ui workspaces)
         :prefix ("TAB" . "workspace")
