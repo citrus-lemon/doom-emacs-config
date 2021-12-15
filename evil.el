@@ -8,7 +8,8 @@
   (map! :i "C-n" nil
         :i "C-p" nil
         :i "C-y" #'yank
-        :i "C-d" #'delete-char)
+        :i "C-d" #'delete-char
+        :i "C-k" #'kill-line)
   (map! :leader
         :when (featurep! :ui workspaces)
         :prefix ("TAB" . "workspace")
