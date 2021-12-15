@@ -29,3 +29,10 @@
           (cd default-directory)
           (+doom-dashboard/open (selected-frame))
           (ns-do-hide-emacs))))
+
+(map! :when (and
+             (featurep! :editor macos-key)
+             (not IS-MAC))
+      "s-z" #'undo
+      "s-Z" #'undo-redo
+      "s-/" #'comment-line)

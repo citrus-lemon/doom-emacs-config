@@ -18,10 +18,12 @@
   :when (featurep! :lang web))
 
 (use-package! dash-at-point
+  :when IS-MAC
   :config
   (map! :leader
         (:prefix ("d" . "dash documentation")
          "d" #'dash-at-point
          "e" #'dash-at-point-with-docset)))
 
-;;(setq +format-with-lsp nil)
+(when (featurep! :tools lsp)
+  (setq +format-with-lsp nil))

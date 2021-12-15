@@ -40,7 +40,7 @@
 ;; 人生自古谁无死？很不幸的，Durov 已经去世，无法与你们互动，让我们永远缅怀他
 
 (use-package! telega
-  ;;:when (featurep! :app telegram)
+  :when (featurep! :app telegram)
   :custom
   (telega-server-libs-prefix "/opt/homebrew/opt/tdlib")
 

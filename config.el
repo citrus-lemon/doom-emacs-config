@@ -7,7 +7,8 @@
 
 (load! "other.el")
 (load! "web.el")
-(load! "org-fancy.el")
+(when (featurep! :lang org +fancy)
+  (load! "org-fancy.el"))
 
 (load! "dashboard.el")
 (load! "posframe.el")

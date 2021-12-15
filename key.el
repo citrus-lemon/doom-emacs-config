@@ -14,7 +14,8 @@
       :map ivy-minibuffer-map "TAB" #'ivy-partial)
 
 (map! :leader
-      (:prefix ("G" . "telega")
+      :when (featurep! :app telegram)
+      (:prefix ("T" . "telega")
        :after telega
        (:desc "telega"                  "t" #'telega
         :desc "telega-kill"             "k" #'telega-kill
@@ -36,3 +37,11 @@
 
 ;; C-<space> dose not work on macOS
 (map! "C-<tab>" #'set-mark-command)
+
+;; key for mouse logi M590
+(map! "<mouse-8>" #'previous-buffer
+      "<mouse-9>" #'next-buffer)
+
+(map! :map npm-mode-keymap
+      :when (featurep! :lang javascript)
+      "C-c l n r" nil)
