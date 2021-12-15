@@ -7,7 +7,8 @@
   (setq haskell-process-args-stack-ghci
         '("--ghc-options=-ferror-spans -fshow-loaded-modules" "--no-build" "--no-load")))
 
-(setq vterm-shell "/bin/zsh --login -c /opt/homebrew/bin/fish")
+(when IS-MAC
+  (setq vterm-shell "/bin/zsh --login -c /opt/homebrew/bin/fish"))
 
 (use-package! devdocs
   :config
