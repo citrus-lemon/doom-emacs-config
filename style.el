@@ -37,3 +37,7 @@
 
 ;;(setq doom-modeline-persp-name t)
 (setq doom-modeline-persp-icon nil)
+(setq doom-modeline-height 20)
+(custom-set-faces
+  '(mode-line ((t (:height 80))))
+  '(mode-line-inactive ((t (:height 80)))))
