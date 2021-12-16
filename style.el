@@ -1,15 +1,49 @@
 ;;; style.el -*- lexical-binding: t; -*-
 
 (setq doom-theme 'doom-solarized-light)
+
+(defun font-exists-p (font)
+  "Check if font exists"
+  (let ((font-list (or (font-family-list) (fc-list))))
+    (if (member font font-list)
+        t
+      nil)))
+
+(defun font-fallback-from (font-list)
+  "Get first font avaiable from a list"
+  (if (or (not font-list)
+          (font-exists-p (car font-list)))
+      (car font-list)
+   (font-fallback-from (cdr font-list))))
+
+(setq my/cjk-font
+      (font-fallback-from
+       '("LXGW WenKai"
+         "Noto Sans CJK SC"
+         "Noto Sans CJK JP"
+         "Noto Sans")))
+
+(setq my/monospace-font
+      (font-fallback-from
+       '("Menlo"
+         "Ubuntu Mono"
+         "Inconsolata"
+         "Noto Mono")))
+
+(setq my/sans-font
+      (font-fallback-from
+       '("Helvetica"
+         "Noto Sans")))
+
 (add-hook! emacs-startup :append
-  (set-fontset-font t 'cjk-misc "LXGW WenKai" nil 'prepend)
-  (set-fontset-font t 'han "LXGW WenKai" nil 'prepend)
-  (set-fontset-font t 'japanese-jisx0208 "LXGW WenKai" nil 'prepend)
-  (set-fontset-font t 'korean-ksc5601 "LXGW WenKai" nil 'prepend)
-  (set-fontset-font t nil "Menlo" nil 'append))
+  (set-fontset-font t 'cjk-misc my/cjk-font nil 'prepend)
+  (set-fontset-font t 'han my/cjk-font nil 'prepend)
+  (set-fontset-font t 'japanese-jisx0208 my/cjk-font nil 'prepend)
+  (set-fontset-font t 'korean-ksc5601 my/cjk-font nil 'prepend)
+  (set-fontset-font t nil my/monospace-font nil 'append))
 (custom-theme-set-faces
  'user
- '(variable-pitch ((t (:family "Helvetica")))))
+ `(variable-pitch ((t (:family ,my/sans-font)))))
 (setq default-frame-alist
       `((left . 400)
         (top . 100)
