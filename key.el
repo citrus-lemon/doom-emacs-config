@@ -23,7 +23,8 @@
         :desc "telega-switch-buffer"    "b" #'telega-switch-buffer
         :desc "telega-account-switch"   "a" #'telega-account-switch)))
 
-(map! "s-c" #'my/copy)
+(map! :when (or IS-MAC (featurep! :editor macos-key))
+      "s-c" #'my/copy)
 
 (map! :map doom-leader-search-map
       "s" #'my/search-symbol-at-point

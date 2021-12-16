@@ -35,4 +35,5 @@
              (not IS-MAC))
       "s-z" #'undo
       "s-Z" #'undo-redo
+      "s-v" #'yank
       "s-/" #'comment-line)
