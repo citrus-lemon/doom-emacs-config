@@ -14,6 +14,7 @@
 (load! "posframe.el")
 (load! "search.el")
 (load! "util.el")
+(load! "quickmove.el")
 
 (load! "telegram.el")
 (load! "evil.el")
