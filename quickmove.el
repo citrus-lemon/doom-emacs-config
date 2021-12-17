@@ -15,6 +15,9 @@ Release little finger from control"
     ([?c] . scroll-down-command)
     ([?l] . recenter-top-bottom)))
 
+(map! :map quickmove-mode-map
+      "TAB" #'+fold/toggle)
+
 (defun quickmove-auto-enable ()
   (if buffer-read-only
       (quickmove-mode 1)
