@@ -75,3 +75,16 @@
 (custom-set-faces
   '(mode-line ((t (:height 80))))
   '(mode-line-inactive ((t (:height 80)))))
+
+;; custom folding style
+(defun +fold-hideshow-set-up-overlay-fn (ov)
+  (when (eq 'code (overlay-get ov 'hs))
+    (when (featurep 'vimish-fold)
+      (overlay-put
+       ov 'before-string
+       (propertize "…" 'display
+                   (list vimish-fold-indication-mode
+                         'empty-line
+                         'vimish-fold-fringe))))
+    (overlay-put
+     ov 'display (propertize " ... " 'face '+fold-hideshow-folded-face))))
