@@ -21,4 +21,4 @@
   :recipe (:host github :repo "astoff/devdocs.el"))
 (when (featurep! :lang web)
   (package! graphql-mode))
-
+(package! coffee-mode)
