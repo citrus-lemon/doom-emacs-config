@@ -88,3 +88,5 @@
                          'vimish-fold-fringe))))
     (overlay-put
      ov 'display (propertize " ... " 'face '+fold-hideshow-folded-face))))
+
+(setq so-long-action #'so-long-minor-mode)
