@@ -5,6 +5,7 @@
 (load! "mac.el")
 
 (load! "other.el")
+(load! "org.el")
 (when (featurep! :lang org +pretty)
   (load! "org-fancy.el"))
 
