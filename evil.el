@@ -13,6 +13,9 @@
   ;; mute recording macro
   (map! :n "q" nil)
   (map! :leader
+        :desc "M-x"               ";" #'execute-extended-command
+        :desc "Eval Expression"   ":" #'pp-eval-expression)
+  (map! :leader
         :when (featurep! :ui workspaces)
         :prefix ("TAB" . "workspace")
         :desc "Display tab bar"           "."   #'+workspace/display
