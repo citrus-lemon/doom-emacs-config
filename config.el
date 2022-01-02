@@ -9,6 +9,7 @@
 (when (featurep! :lang org +pretty)
   (load! "org-fancy.el"))
 
+(load! "term.el")
 (load! "dashboard.el")
 (load! "posframe.el")
 (load! "search.el")
