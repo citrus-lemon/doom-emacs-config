@@ -1,6 +1,6 @@
 ;;; style.el -*- lexical-binding: t; -*-
 
-(setq doom-theme 'doom-solarized-light)
+(setq doom-theme 'doom-flatwhite)
 
 (defun font-exists-p (font)
   "Check if font exists"
