@@ -8,6 +8,7 @@
     (switch-to-buffer buffer)
     (if dir (cd dir))
     (vterm-mode)
+    (setq-local vterm-buffer-name-string "Term: %s")
     (setq mode-line-format (default-value 'mode-line-format))
     buffer))
 (defalias '=term 'my/new-terminal)
