@@ -24,3 +24,5 @@ Release little finger from control"
     (quickmove-mode 0)))
 
 (add-hook 'read-only-mode-hook #'quickmove-auto-enable)
+
+(map! "C-x C-<tab>" #'ace-window)
