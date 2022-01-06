@@ -10,6 +10,8 @@
         :i "C-y" #'yank
         :i "C-d" #'delete-char
         :i "C-k" #'kill-line)
+  (map! :map evil-window-map
+        "SPC" #'ace-window)
   ;; mute recording macro
   (map! :n "q" nil)
   (map! :leader
