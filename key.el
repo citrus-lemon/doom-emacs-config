@@ -36,6 +36,9 @@
  "<C-wheel-down>" nil
  "<C-wheel-up>"   nil)
 
+;; C-z too annoying
+(map! "C-z" nil)
+
 ;; C-<space> dose not work on macOS
 (map! "C-<tab>" #'set-mark-command)
 
