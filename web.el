@@ -15,7 +15,9 @@
 (use-package! graphql-mode
   :hook (graphql-mode . lsp-deferred)
   :commands (lsp lsp-deferred)
-  :when (featurep! :lang web))
+  :when (featurep! :lang web)
+  :config
+  (load! "vendor/ob-graphql.el"))
 
 (use-package! dash-at-point
   :when IS-MAC
