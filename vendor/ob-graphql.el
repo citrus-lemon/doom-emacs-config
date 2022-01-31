@@ -61,7 +61,11 @@ as type \"graphql.\""
 		     (graphql-post-request url body op-name))))
     (with-temp-buffer
       (insert (json-encode (request-response-data response)))
-      (json-pretty-print-buffer)
+      (if (fboundp '+format--buffer)
+          (progn
+            (json-mode)
+            (+format--buffer))
+        (json-pretty-print-buffer))
       (buffer-substring (point-min) (point-max)))))
 
 (provide 'ob-graphql)
