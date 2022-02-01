@@ -49,3 +49,7 @@
 (map! :map npm-mode-keymap
       :when (featurep! :lang javascript)
       "C-c l n r" nil)
+
+(map! :map magit-blame-read-only-mode-map
+      ;; quit mode without risk
+      "C-g"     #'magit-blame-quit)
