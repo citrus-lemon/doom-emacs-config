@@ -18,6 +18,7 @@
 (load! "quickmove.el")
 
 (load! "web.el")
+(load! "lang.el")
 
 ;; apps
 (load! "telegram.el")
