@@ -1,10 +1,12 @@
 ;;; util.el -*- lexical-binding: t; -*-
 
-(defun my/copy ()
-  (interactive)
+(defun my/copy (&optional ARG)
+  (interactive "p")
   (if mark-active
       (copy-region-as-kill (region-beginning) (region-end))
-    (kill-new (thing-at-point 'symbol))))
+    (if ARG
+        (copy-region-as-kill (line-beginning-position) (line-end-position))
+      (kill-new (thing-at-point 'symbol)))))
 
 ;; https://emacs.stackexchange.com/questions/30942/insert-a-string-from-eval-expression-without-the-quotes#answer-30960
 (defun vicarie/eval-last-sexp-and-do (f)
