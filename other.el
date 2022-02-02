@@ -10,6 +10,18 @@
 (when IS-MAC
   (setq vterm-shell "/bin/zsh --login -c /opt/homebrew/bin/fish"))
 
+(use-package! dash-at-point
+  :when IS-MAC
+  :config
+  (map! :leader
+        (:prefix ("d" . "documentation")
+         "d" #'dash-at-point
+         "e" #'dash-at-point-with-docset)))
+
 (use-package! devdocs
   :config
-  (setq devdocs-data-dir (expand-file-name "devdocs" doom-local-dir)))
+  (setq devdocs-data-dir (expand-file-name "devdocs" doom-local-dir))
+  (map! :leader
+        (:prefix ("d" . "documentation")
+         "i" #'devdocs-install
+         "f" #'devdocs-lookup)))

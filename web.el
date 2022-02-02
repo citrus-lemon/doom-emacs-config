@@ -19,13 +19,5 @@
   :config
   (load! "vendor/ob-graphql.el"))
 
-(use-package! dash-at-point
-  :when IS-MAC
-  :config
-  (map! :leader
-        (:prefix ("d" . "dash documentation")
-         "d" #'dash-at-point
-         "e" #'dash-at-point-with-docset)))
-
 (when (featurep! :tools lsp)
   (setq +format-with-lsp nil))
