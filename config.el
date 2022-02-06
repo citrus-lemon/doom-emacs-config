@@ -5,6 +5,7 @@
 (load! "mac.el")
 
 (load! "other.el")
+;; TODO: still need to clean the writing env for TeX
 (load! "org.el")
 (when (featurep! :lang org +pretty)
   (load! "org-fancy.el"))
