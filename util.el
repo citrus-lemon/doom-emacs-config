@@ -41,3 +41,8 @@
 (defun insert-random-color-rgb ()
   (interactive)
   (insert (random-color)))
+
+(defun lift--least-recent-from-kill-ring (string &optional arg)
+  (when string (kill-new string)))
+
+(advice-add #'consult-yank-from-kill-ring :before #'lift--least-recent-from-kill-ring)
