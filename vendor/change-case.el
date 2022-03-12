@@ -121,11 +121,23 @@
    (downcase (car word-list))
    (change-case-pascal-case-render (cdr word-list))))
 
+;; CONSTANT_CASE
+(defvar change-case-constant-case-separator "_"
+  "Used as delimiter in constant case.")
+
+(defun change-case-constant-case-parse (sentence)
+  (s-split change-case-constant-case-separator sentence))
+
+(defun change-case-constant-case-render (word-list)
+  (string-join (mapcar 'upcase word-list)
+               change-case-constant-case-separator))
+
 ;;; Options
 (defvar change-case-parser-alist
   '(("dotted.case" . change-case-dotted-case-parse)
     ("path/case" . change-case-path-case-parse)
     ("snake_case" . change-case-snake-case-parse)
+    ("CONSTANT_CASE" . change-case-constant-case-parse)
     ("kebab-case" . change-case-kebab-case-parse)
     ("PascalCase" . change-case-pascal-case-parse)
     ("camelCase" . change-case-camel-case-parse))
@@ -135,6 +147,7 @@
   '(("dotted.case" . change-case-dotted-case-render)
     ("path/case" . change-case-path-case-render)
     ("snake_case" . change-case-snake-case-render)
+    ("CONSTANT_CASE" . change-case-constant-case-render)
     ("kebab-case" . change-case-kebab-case-render)
     ("PascalCase" . change-case-pascal-case-render)
     ("camelCase" . change-case-camel-case-render))
