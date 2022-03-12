@@ -18,6 +18,9 @@
 (load! "evil.el")
 (load! "quickmove.el")
 
+;; tool
+(load! "vendor/change-case.el")
+
 (load! "web.el")
 (load! "lang.el")
 
