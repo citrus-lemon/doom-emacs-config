@@ -22,3 +22,4 @@
 (when (featurep! :lang web)
   (package! graphql-mode))
 (package! coffee-mode)
+(package! w3m)

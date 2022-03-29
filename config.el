@@ -23,6 +23,7 @@
 
 (load! "web.el")
 (load! "lang.el")
+(load! "browser.el")
 
 ;; apps
 (load! "telegram.el")
