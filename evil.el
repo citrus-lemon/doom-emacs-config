@@ -12,6 +12,8 @@
         :i "C-k" #'kill-line)
   (map! :map evil-window-map
         "SPC" #'ace-window)
+  (map! :map evil-insert-state-map
+        "C-<tab>" #'set-mark-command)
   ;; mute recording macro
   (map! :n "q" nil)
   (map! :leader
