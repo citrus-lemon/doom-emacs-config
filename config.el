@@ -23,6 +23,7 @@
 
 (load! "web.el")
 (load! "lang.el")
+(load! "isar.el")
 (load! "browser.el")
 
 ;; apps
