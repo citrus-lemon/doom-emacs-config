@@ -12,6 +12,8 @@
            (plist-get info :minibuffer-height)
            20)))
 
+(advice-add 'toggle-frame-fullscreen :after 'posframe-delete-all)
+
 (use-package! which-key-posframe
   :when (featurep! :ui whichkey +childframe)
   :config
