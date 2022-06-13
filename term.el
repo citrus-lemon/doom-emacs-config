@@ -20,6 +20,9 @@
   (if terminal-minor-mode
       (my/new-terminal)))
 
+(map! :map vterm-mode-map
+      "C-g" #'vterm-send-C-g)
+
 (advice-add 'split-window-below :after #'terminal-auto-new)
 (advice-add 'split-window-right :after #'terminal-auto-new)
 
