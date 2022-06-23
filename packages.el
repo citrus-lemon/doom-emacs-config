@@ -23,14 +23,15 @@
   (package! graphql-mode))
 (package! coffee-mode)
 (package! w3m)
-(package! isar-mode
-  :recipe (:host github :repo "m-fleury/isar-mode"))
-(package! lsp-isar
-  :recipe (:host github
-           :repo "m-fleury/isabelle-emacs"
-           :branch "Isabelle2021-1-more-vscode"
-           :pre-build (("./bin/isabelle" "components" "-I")
-                       ("./bin/isabelle" "components" "-a")
-                       ("./bin/isabelle" "build" "-b" "HOL"))
-           :files ("src/Tools/emacs-lsp/lsp-isar/*.el")))
-(package! session-async)
+(when (featurep! :lang isar)
+  (package! isar-mode
+    :recipe (:host github :repo "m-fleury/isar-mode"))
+  (package! lsp-isar
+    :recipe (:host github
+             :repo "m-fleury/isabelle-emacs"
+             :branch "Isabelle2021-1-more-vscode"
+             :pre-build (("./bin/isabelle" "components" "-I")
+                         ("./bin/isabelle" "components" "-a")
+                         ("./bin/isabelle" "build" "-b" "HOL"))
+             :files ("src/Tools/emacs-lsp/lsp-isar/*.el")))
+  (package! session-async))

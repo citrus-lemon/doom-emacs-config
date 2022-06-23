@@ -12,6 +12,7 @@
 
 ;; Isabelle setup
 (use-package! isar-mode
+  :when (featurep! :lang isar)
   :mode "\\.thy\\'"
   :config
   ;; (add-hook 'isar-mode-hook 'turn-on-highlight-indentation-mode)
@@ -29,10 +30,12 @@
               (yas-minor-mode))))
 
 (use-package! lsp-isar-parse-args
+  :when (featurep! :lang isar)
   :custom
   (lsp-isar-parse-args-nollvm nil))
 
 (use-package! lsp-isar
+  :when (featurep! :lang isar)
   :commands lsp-isar-define-client-and-start
   :custom
   (lsp-isar-output-use-async t)
