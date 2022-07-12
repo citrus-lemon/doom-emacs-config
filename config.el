@@ -17,6 +17,7 @@
 (load! "util.el")
 (load! "evil.el")
 (load! "quickmove.el")
+(load! "dired.el")
 
 ;; tool
 (load! "vendor/change-case.el")
