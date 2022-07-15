@@ -42,6 +42,9 @@
 ;; C-<space> dose not work on macOS
 (map! "C-<tab>" #'set-mark-command)
 
+;; C-M-h for delete-pair
+(map! "C-M-h" #'delete-pair)
+
 ;; key for mouse logi M590
 (map! "<mouse-8>" #'previous-buffer
       "<mouse-9>" #'next-buffer)
