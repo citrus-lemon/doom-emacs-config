@@ -26,10 +26,7 @@
 (setq +doom-dashboard-ascii-banner-fn #'my/dashboard-draw-ascii-banner-fn)
 
 (setq +doom-dashboard-menu-sections
-      '(("Telegram: Keyboard War"
-         :icon (all-the-icons-faicon "paper-plane" :face 'doom-dashboard-menu-title)
-         :action telega)
-        ("Find note from org-roam"
+      '(("Find note from org-roam"
          :icon (all-the-icons-faicon "sticky-note" :face 'doom-dashboard-menu-title)
          :action org-roam-node-find)
         ("Open org-agenda"
@@ -38,6 +35,13 @@
         ("Write diary today"
          :icon (all-the-icons-faicon "lemon-o" :face 'doom-dashboard-menu-title)
          :action org-roam-dailies-goto-today)))
+
+(when (featurep! :app telegram)
+  (setq +doom-dashboard-menu-sections
+        `(("Telegram: Keyboard War"
+           :icon (all-the-icons-faicon "paper-plane" :face 'doom-dashboard-menu-title)
+           :action telega)
+          ,@+doom-dashboard-menu-sections)))
 
 (advice-remove '+doom-dashboard/open "delete-other-windows")
 (advice-add '+doom-dashboard/open :before
