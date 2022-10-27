@@ -7,6 +7,7 @@
   ;; make insert mode same with emacs
   (map! :i "C-n" nil
         :i "C-p" nil
+        :i "C-u" #'universal-argument
         :i "C-y" #'yank
         :i "C-d" #'delete-char
         :i "C-k" #'kill-line)
