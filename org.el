@@ -52,3 +52,5 @@
   (interactive)
   (advice-remove #'create-image #'org-limit-image-size--create-image)
   (advice-remove #'org-display-inline-images #'org-limit-image-size--org-display-inline-images))
+
+(advice-add 'org-roam-dailies--capture :after (lambda (&rest r) (company-mode 0)))
