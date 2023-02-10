@@ -1,5 +1,7 @@
 ;;; $DOOMDIR/config.el -*- lexical-binding: t; -*-
 
+(load! "personal.el")
+
 (load! "style.el")
 (load! "key.el")
 (load! "mac.el")
@@ -29,4 +31,3 @@
 ;; apps
 (load! "telegram.el")
 
-(load! "personal.el")
