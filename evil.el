@@ -11,6 +11,9 @@
         :i "C-y" #'yank
         :i "C-d" #'delete-char
         :i "C-k" #'kill-line)
+  ;; even normal mode
+  (map! :n "C-n" nil
+        :n "C-p" nil)
   (map! :map evil-window-map
         "SPC" #'ace-window)
   (map! :map evil-insert-state-map
