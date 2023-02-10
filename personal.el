@@ -18,3 +18,13 @@
 ;; https://docs.projectile.mx/projectile/usage.html#automated-project-discovery
 (setq projectile-project-search-path
       '("~/projects/"))
+
+(after! 'magit-forge
+  (add-to-list 'forge-alist
+               ;; '(
+               ;;   "example.gitlab.com"
+               ;;   "example.gitlab.com/api/v4"
+               ;;   "example.gitlab.com" forge-gitlab-repository)
+               ))
+
+(setq auth-sources '("~/.authinfo"))
