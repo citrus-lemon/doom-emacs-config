@@ -21,6 +21,7 @@
       (my/new-terminal)))
 
 (map! :map vterm-mode-map
+      "M-<backspace>" #'vterm-send-meta-backspace
       "C-g" #'vterm-send-C-g)
 
 (advice-add 'split-window-below :after #'terminal-auto-new)
