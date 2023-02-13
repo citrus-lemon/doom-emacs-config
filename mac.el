@@ -31,7 +31,7 @@
           (ns-do-hide-emacs))))
 
 (map! :when (and
-             (featurep! :editor macos-key)
+             (modulep! :editor macos-key)
              (not IS-MAC))
       "s-z" #'undo
       "s-Z" #'undo-redo

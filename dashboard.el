@@ -36,7 +36,7 @@
          :icon (all-the-icons-faicon "lemon-o" :face 'doom-dashboard-menu-title)
          :action org-roam-dailies-goto-today)))
 
-(when (featurep! :app telegram)
+(when (modulep! :app telegram)
   (setq +doom-dashboard-menu-sections
         `(("Telegram: Keyboard War"
            :icon (all-the-icons-faicon "paper-plane" :face 'doom-dashboard-menu-title)

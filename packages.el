@@ -1,15 +1,15 @@
 ;; -*- no-byte-compile: t; -*-
 ;;; $DOOMDIR/packages.el
 
-(when (featurep! :app telegram)
+(when (modulep! :app telegram)
   (package! telega
     :recipe (:files (:defaults "contrib/*.el" "etc" "server" "Makefile"))))
-(when (featurep! :app mastodon)
+(when (modulep! :app mastodon)
   (package! mastodon
     :recipe (:host github :repo "WindProphet/mastodon.el")))
-(when (featurep! :ui whichkey +childframe)
+(when (modulep! :ui whichkey +childframe)
   (package! which-key-posframe))
-(when (featurep! :completion vertico +childframe)
+(when (modulep! :completion vertico +childframe)
   (package! vertico-posframe))
 (when nil
   (package! eldoc-posframe
@@ -19,11 +19,11 @@
     :recipe (:host github :repo "stanaka/dash-at-point")))
 (package! devdocs
   :recipe (:host github :repo "astoff/devdocs.el"))
-(when (featurep! :lang web)
+(when (modulep! :lang web)
   (package! graphql-mode))
 (package! coffee-mode)
 (package! w3m)
-(when (featurep! :lang isar)
+(when (modulep! :lang isar)
   (package! isar-mode
     :recipe (:host github :repo "m-fleury/isar-mode"))
   (package! lsp-isar
@@ -35,3 +35,5 @@
                          ("./bin/isabelle" "build" "-b" "HOL"))
              :files ("src/Tools/emacs-lsp/lsp-isar/*.el")))
   (package! session-async))
+(when (modulep! :lang swift)
+  (package! ob-swift))

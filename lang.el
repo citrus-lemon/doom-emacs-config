@@ -3,7 +3,7 @@
 (set-formatter! 'swift-format '("swift-format" ("%S" (or buffer-file-name mode-result "")))
   :modes '(swift-mode))
 
-(when (featurep! :lang rust)
+(when (modulep! :lang rust)
   (setq lsp-rust-analyzer-proc-macro-enable t)
   (setq lsp-rust-analyzer-server-display-inlay-hints t))
 
@@ -12,7 +12,7 @@
 
 ;; Isabelle setup
 (use-package! isar-mode
-  :when (featurep! :lang isar)
+  :when (modulep! :lang isar)
   :mode "\\.thy\\'"
   :config
   ;; (add-hook 'isar-mode-hook 'turn-on-highlight-indentation-mode)
@@ -30,12 +30,12 @@
               (yas-minor-mode))))
 
 (use-package! lsp-isar-parse-args
-  :when (featurep! :lang isar)
+  :when (modulep! :lang isar)
   :custom
   (lsp-isar-parse-args-nollvm nil))
 
 (use-package! lsp-isar
-  :when (featurep! :lang isar)
+  :when (modulep! :lang isar)
   :commands lsp-isar-define-client-and-start
   :custom
   (lsp-isar-output-use-async t)

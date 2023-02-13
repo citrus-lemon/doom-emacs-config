@@ -9,12 +9,12 @@
 
 
 ;; set minibuffer TAB to complete
-(map! :when (featurep! :completion ivy)
+(map! :when (modulep! :completion ivy)
       :after ivy
       :map ivy-minibuffer-map "TAB" #'ivy-partial)
 
 (map! :leader
-      :when (featurep! :app telegram)
+      :when (modulep! :app telegram)
       (:prefix ("T" . "telega")
        :after telega
        (:desc "telega"                  "t" #'telega
@@ -23,7 +23,7 @@
         :desc "telega-switch-buffer"    "b" #'telega-switch-buffer
         :desc "telega-account-switch"   "a" #'telega-account-switch)))
 
-(map! :when (or IS-MAC (featurep! :editor macos-key))
+(map! :when (or IS-MAC (modulep! :editor macos-key))
       "s-c" #'my/copy)
 
 (map! :map doom-leader-search-map
@@ -50,7 +50,7 @@
       "<mouse-9>" #'next-buffer)
 
 (map! :map npm-mode-keymap
-      :when (featurep! :lang javascript)
+      :when (modulep! :lang javascript)
       "C-c l n r" nil)
 
 (map! :map magit-blame-read-only-mode-map

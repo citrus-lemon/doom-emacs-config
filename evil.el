@@ -24,7 +24,7 @@
         :desc "M-x"               ";" #'execute-extended-command
         :desc "Eval Expression"   ":" #'pp-eval-expression)
   (map! :leader
-        :when (featurep! :ui workspaces)
+        :when (modulep! :ui workspaces)
         :prefix ("TAB" . "workspace")
         :desc "Display tab bar"           "."   #'+workspace/display
         :desc "Switch workspace"          "TAB" #'+workspace/switch-to

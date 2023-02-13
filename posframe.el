@@ -15,14 +15,14 @@
 (advice-add 'toggle-frame-fullscreen :after 'posframe-delete-all)
 
 (use-package! which-key-posframe
-  :when (featurep! :ui whichkey +childframe)
+  :when (modulep! :ui whichkey +childframe)
   :config
   (which-key-posframe-mode)
   (setq which-key-posframe-poshandler
         'my/posframe-poshandler-frame-bottom-right-corner))
 
 (use-package! vertico-posframe
-  :when (featurep! :completion vertico +childframe)
+  :when (modulep! :completion vertico +childframe)
   :init
   (defun my/vertico-posframe-get-size ()
     "The size functon used by `vertico-posframe-size-function'."
@@ -51,7 +51,7 @@
   :custom-face
   (eldoc-posframe-background-face ((t :inherit tooltip)))
   :config
-  (when (not (featurep! :lang javascript +lsp))
+  (when (not (modulep! :lang javascript +lsp))
     (add-hook! 'typescript-mode-hook     #'eldoc-posframe-mode)
     (add-hook! 'typescript-tsx-mode-hook #'eldoc-posframe-mode)
     (add-hook! 'rjsx-mode-hook           #'eldoc-posframe-mode)))
