@@ -21,3 +21,11 @@
 
 (when (modulep! :tools lsp)
   (setq +format-with-lsp nil))
+
+(defun disable-format-all-mode ()
+  (interactive)
+  (format-all-mode 0))
+
+;; hook seems does not work
+;; (add-hook! 'web-mode-hook #'disable-format-all-mode)
+(advice-add 'web-mode :after #'disable-format-all-mode)
