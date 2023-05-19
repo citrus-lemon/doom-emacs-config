@@ -46,3 +46,14 @@
   (when string (kill-new string)))
 
 (advice-add #'consult-yank-from-kill-ring :before #'lift--least-recent-from-kill-ring)
+
+(defun my/load-org-tangle-config (id &optional sym)
+  (when (and (not (featurep sym)) (org-id-find id))
+    (save-window-excursion
+      (org-id-goto id)
+      (let* ((tangle-list (org-babel-tangle))
+             (el-file (expand-file-name (car tangle-list) default-directory)))
+        (when (file-exists-p el-file)
+          (when sym (write-region (format "(provide '%s)" sym) nil el-file 'append))
+          (load el-file t))))))
+(defalias 'config! #'my/load-org-tangle-config)
