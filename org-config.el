@@ -1,6 +1,7 @@
 ;;; org.el -*- lexical-binding: t; -*-
 
 (setq org-image-actual-width 400)
+(setq org-preview-latex-default-process 'dvisvgm)
 
 ;; https://misohena.jp/blog/2020-05-26-limit-maximum-inline-image-size-in-org-mode.html
 (defcustom org-limit-image-size '(0.99 . 0.5) "Maximum image size") ;; integer or float or (width-int-or-float . height-int-or-float)
